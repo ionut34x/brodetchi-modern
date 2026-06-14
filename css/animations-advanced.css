@@ -1,0 +1,138 @@
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blobMove {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(30px, -50px);
+    }
+    50% {
+        transform: translate(-20px, 20px);
+    }
+    75% {
+        transform: translate(50px, 50px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Stagger animations */
+.featured-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.featured-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.featured-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.featured-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.featured-card:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.testimonial-card:nth-child(1) {
+    animation: slideInUp 0.6s ease 0s backwards;
+}
+
+.testimonial-card:nth-child(2) {
+    animation: slideInUp 0.6s ease 0.1s backwards;
+}
+
+.testimonial-card:nth-child(3) {
+    animation: slideInUp 0.6s ease 0.2s backwards;
+}
