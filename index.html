@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brodetchi - Artizanat Copt cu Pasiune</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <h1>BRODETCHI</h1>
+                <p class="tagline">Artizanat Copt cu Pasiune</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Acasă</a></li>
+                <li><a href="#produse" class="nav-link">Produse</a></li>
+                <li><a href="#locatii" class="nav-link">Locații</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Pâine Proaspătă. Fiecare Zi.</h2>
+            <p class="hero-subtitle">Brutărie și cofetărie din Moldova cu rețete tradiționale și ingrediente premium</p>
+            <button class="cta-button" onclick="scrollToSection('produse')">Explorează Produsele</button>
+        </div>
+        <div class="hero-background">
+            <div class="floating-orb orb-1"></div>
+            <div class="floating-orb orb-2"></div>
+            <div class="floating-orb orb-3"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produse" class="products-section">
+        <div class="section-header">
+            <h2>Colecția Noastră</h2>
+            <p>Selecția celor mai bune produse, gătite cu dragoste</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-container">
+            <div class="filter-group">
+                <h4>Categorie</h4>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Toate</button>
+                    <button class="filter-btn" data-filter="pain">Pâini</button>
+                    <button class="filter-btn" data-filter="viennoiserie">Viennoiserie</button>
+                    <button class="filter-btn" data-filter="cake">Prăjituri</button>
+                    <button class="filter-btn" data-filter="candy">Dulciuri</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Preț</h4>
+                <div class="price-range">
+                    <input type="range" min="0" max="500" value="500" id="priceRange" class="price-slider">
+                    <div class="price-display">
+                        <span>0 MDL</span>
+                        <span id="priceValue">500 MDL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Sortare</h4>
+                <select id="sortSelect" class="sort-select">
+                    <option value="popular">Populare</option>
+                    <option value="price-low">Preț: Crescător</option>
+                    <option value="price-high">Preț: Descrescător</option>
+                    <option value="name">Nume A-Z</option>
+                </select>
+            </div>
+
+            <button class="reset-filters" onclick="resetFilters()">Resetare Filtre</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+            <!-- Filled by JavaScript -->
+        </div>
+
+        <!-- No Results Message -->
+        <div class="no-results" id="noResults" style="display: none;">
+            <p>Niciun produs nu corespunde filtrelor selectate.</p>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locatii" class="locations-section">
+        <div class="section-header">
+            <h2>Locații</h2>
+            <p>Vizitează-ne la cea mai apropiată locație</p>
+        </div>
+
+        <div class="locations-grid" id="locationsGrid">
+            <!-- Filled by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h3>Rămâi Conectat</h3>
+            <p>Primește oferte exclusive și noutăți despre produsele noastre</p>
+            <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                <input type="email" placeholder="Adresa ta de email" required>
+                <button type="submit" class="subscribe-btn">Abonare</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2>Contactează-ne</h2>
+            <p>Am plăcut să aud de la tine</p>
+        </div>
+
+        <div class="contact-container">
+            <form class="contact-form" onsubmit="handleContactForm(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="Nume complet" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Adresa de email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Telefon" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Mesajul tău" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Trimite Mesaj</button>
+            </form>
+
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h4>📍 Adresă</h4>
+                    <p>Chișinău, Moldova</p>
+                </div>
+                <div class="contact-card">
+                    <h4>📞 Telefon</h4>
+                    <p>+373 22 XXX XXX</p>
+                </div>
+                <div class="contact-card">
+                    <h4>📧 Email</h4>
+                    <p>info@brodetchi.md</p>
+                </div>
+                <div class="contact-card">
+                    <h4>⏰ Ore</h4>
+                    <p>Luni - Duminică: 6:00 - 21:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5>Brodetchi</h5>
+                <p>Brutărie și cofetărie cu tradiție moldovenească</p>
+            </div>
+            <div class="footer-section">
+                <h5>Linkuri Rapide</h5>
+                <ul>
+                    <li><a href="#produse">Produse</a></li>
+                    <li><a href="#locatii">Locații</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Urmărește-ne</h5>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">TikTok</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Brodetchi. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="">
+                <div class="modal-details">
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalDescription"></p>
+                    <div class="modal-meta">
+                        <span id="modalCategory" class="badge"></span>
+                        <span id="modalPrice" class="price"></span>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart()">Adaugă în Coș</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/filters.js"></script>
+</body>
+</html>
